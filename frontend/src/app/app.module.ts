@@ -9,6 +9,7 @@ import { environment } from 'src/environments/environment';
 import { ItemShopComponent } from './pages/item-shop/item-shop.component';
 import { ItemPreviewComponent } from './pages/item-shop/item-preview/item-preview.component';
 import { NavBarComponent } from './pages/components/nav-bar/nav-bar.component';
+import { TopBarComponent } from './pages/components/top-bar/top-bar.component';
 
 const socketIoConfig: SocketIoConfig = { url: environment.host, options: {} };
 @NgModule({
@@ -17,7 +18,8 @@ const socketIoConfig: SocketIoConfig = { url: environment.host, options: {} };
     TasksComponent,
     ItemShopComponent,
     ItemPreviewComponent,
-    NavBarComponent
+    NavBarComponent,
+    TopBarComponent
   ],
   imports: [
     SocketIoModule.forRoot(socketIoConfig),
