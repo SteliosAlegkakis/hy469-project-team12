@@ -10,6 +10,10 @@ import { ItemShopComponent } from './pages/item-shop/item-shop.component';
 import { ItemPreviewComponent } from './pages/item-shop/item-preview/item-preview.component';
 import { NavBarComponent } from './pages/components/nav-bar/nav-bar.component';
 import { TopBarComponent } from './pages/components/top-bar/top-bar.component';
+import { NutritionComponent } from './pages/nutrition/nutrition.component';
+import { ActivityComponent } from './pages/activity/activity.component';
+import { SleepComponent } from './pages/sleep/sleep.component';
+import { WeightComponent } from './pages/weight/weight.component';
 
 const socketIoConfig: SocketIoConfig = { url: environment.host, options: {} };
 @NgModule({
@@ -19,7 +23,11 @@ const socketIoConfig: SocketIoConfig = { url: environment.host, options: {} };
     ItemShopComponent,
     ItemPreviewComponent,
     NavBarComponent,
-    TopBarComponent
+    TopBarComponent,
+    NutritionComponent,
+    ActivityComponent,
+    SleepComponent,
+    WeightComponent
   ],
   imports: [
     SocketIoModule.forRoot(socketIoConfig),
