@@ -1,28 +1,29 @@
 <div id="nav-container">
     <nav id="nav-bar">
-        <a class="selected" routerLink="">
+        <a class="selected" routerLink="nutrition">
           <div>
             <img src="../../../../assets/nav-bar/nutrition.png" alt="apple icon">
             <p>Nutrition</p>
           </div>
         </a>
-        <a routerLink="">
+        <a routerLink="activity">
           <div>
             <img src="../../../../assets/nav-bar/activity.png" alt="human running icon">
             <p>Activity</p>
           </div>
         </a>
-        <a routerLink="">
+        <a routerLink="sleep">
           <div>
             <img src="../../../../assets/nav-bar/sleep.png" alt="moon icon">
             <p>Sleep</p>
           </div>
         </a>
-        <a routerLink="">
+        <a routerLink="weight">
           <div>
             <img src="../../../../assets/nav-bar/weight.png" alt="scale icon">
             <p>Weight</p>
           </div>
         </a>
     </nav>
-</div>    
+</div>
+<router-outlet></router-outlet>
