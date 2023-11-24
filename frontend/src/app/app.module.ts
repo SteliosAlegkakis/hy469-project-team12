@@ -15,6 +15,7 @@ import { ActivityComponent } from './pages/activity/activity.component';
 import { SleepComponent } from './pages/sleep/sleep.component';
 import { WeightComponent } from './pages/weight/weight.component';
 import { MobileComponent } from './pages/mobile/mobile.component';
+import { GraphComponent } from './pages/components/graph/graph.component';
 
 const socketIoConfig: SocketIoConfig = { url: environment.host, options: {} };
 @NgModule({
@@ -29,7 +30,8 @@ const socketIoConfig: SocketIoConfig = { url: environment.host, options: {} };
     ActivityComponent,
     SleepComponent,
     WeightComponent,
-    MobileComponent
+    MobileComponent,
+    GraphComponent
   ],
   imports: [
     SocketIoModule.forRoot(socketIoConfig),
