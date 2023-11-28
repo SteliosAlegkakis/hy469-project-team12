@@ -10,8 +10,9 @@
     width: 98%;
     margin-left: 1%;    
     position: fixed;
-    top: 88%;
+    top: 90%;
     left: 0;
+    z-index: 100;
 
     #nav-bar{
         display: flex;
