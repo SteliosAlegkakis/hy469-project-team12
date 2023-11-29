@@ -16,6 +16,7 @@ import { SleepComponent } from './pages/sleep/sleep.component';
 import { WeightComponent } from './pages/weight/weight.component';
 import { MobileComponent } from './pages/mobile/mobile.component';
 import { GraphComponent } from './pages/components/graph/graph.component';
+import { PercentageBarComponent } from './pages/components/percentage-bar/percentage-bar.component';
 
 const socketIoConfig: SocketIoConfig = { url: environment.host, options: {} };
 @NgModule({
@@ -31,7 +32,8 @@ const socketIoConfig: SocketIoConfig = { url: environment.host, options: {} };
     SleepComponent,
     WeightComponent,
     MobileComponent,
-    GraphComponent
+    GraphComponent,
+    PercentageBarComponent
   ],
   imports: [
     SocketIoModule.forRoot(socketIoConfig),
