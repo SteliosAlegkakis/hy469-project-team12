@@ -1,0 +1,33 @@
+.percentage-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+
+    .progress{
+        width: 100%;
+    }
+    
+    .info{
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+        margin: 2%;
+        align-items: center;
+    
+        p{
+            margin: 0;
+            font-weight: 500;
+        }
+    
+        div{
+            border-radius: 10px;
+            box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+            background-color: #515151;
+            display: flex;
+            padding: 1%;
+            align-items: center;
+            justify-content: center;
+        }
+    }
+}
