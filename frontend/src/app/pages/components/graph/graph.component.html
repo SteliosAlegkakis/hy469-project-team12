@@ -1,4 +1,4 @@
-<div class="graph-container">
+<div class="graph-container container">
     <div *ngFor="let i of info;let k = index;" class="graph-element" (click)="onClick(element, k)" #element>
         <div class="bar" [ngStyle]="{ 'background-color': color, 'height': i.height + '%' }"></div>
         <p>{{ i.date }}</p>
