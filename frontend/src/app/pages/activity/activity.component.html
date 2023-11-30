@@ -1,3 +1,25 @@
 <div class="mobile-body">
-    <h1>Activity</h1>
+    <h1>Nutrition</h1>
+    <div class="info-box">
+        <h1 class="info-box-item">3.241<span>&nbsp;steps</span></h1>
+        <app-percentage-bar class="info-box-item" style="margin-top: 0;"
+            [completed]="3241" [goal]="6000" 
+            bar_color="#A2CD81">
+        </app-percentage-bar>
+        <app-info-icons class="info-box-item"
+            label_1="duration"
+            label_2="calories burnt"
+            label_3="heart rate"
+            value_1="90 min"
+            value_2="100 kcal"
+            value_3="67 bpm"
+        ></app-info-icons>
+        <app-secondary-info class="info-box-item"
+            label_1 = "distance covered :"
+            value_1 = "1,23 km"
+            label_2 = "total calories burnt :"
+            value_2 = "1.100 kcal"
+        ></app-secondary-info>
+    </div>
+    <app-graph color="#A2CD81" [info]="info"></app-graph>
 </div>
