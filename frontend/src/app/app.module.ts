@@ -19,6 +19,8 @@ import { GraphComponent } from './pages/components/graph/graph.component';
 import { PercentageBarComponent } from './pages/components/percentage-bar/percentage-bar.component';
 import { SecondaryInfoComponent } from './pages/components/secondary-info/secondary-info.component';
 import { InfoIconsComponent } from './pages/components/info-icons/info-icons.component';
+import { WeightBarComponent } from './pages/components/weight-bar/weight-bar.component';
+import { WeightInfoComponent } from './pages/components/weight-info/weight-info.component';
 
 const socketIoConfig: SocketIoConfig = { url: environment.host, options: {} };
 @NgModule({
@@ -37,7 +39,9 @@ const socketIoConfig: SocketIoConfig = { url: environment.host, options: {} };
     GraphComponent,
     PercentageBarComponent,
     SecondaryInfoComponent,
-    InfoIconsComponent
+    InfoIconsComponent,
+    WeightBarComponent,
+    WeightInfoComponent
   ],
   imports: [
     SocketIoModule.forRoot(socketIoConfig),
