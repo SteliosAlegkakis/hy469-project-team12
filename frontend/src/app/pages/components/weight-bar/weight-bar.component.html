@@ -1,1 +1,12 @@
-<p>weight-bar works!</p>
+<div class="box">
+  <div class="line-with-texts">
+    <span class="text-left">BMI</span>
+    <span class="text-right"
+      >{{ bmi }} <span class="text-right2">(normal)</span></span
+    >
+  </div>
+  <div class="progress-bar">
+    <div class="pointer" [style.left.%]="pointerPosition"></div>
+  </div>
+  <span class="text-left2">healthy range : 18,5 - 25</span>
+</div>

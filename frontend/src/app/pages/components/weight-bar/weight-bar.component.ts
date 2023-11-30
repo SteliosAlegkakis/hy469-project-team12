@@ -1,13 +1,11 @@
 import { Component } from '@angular/core';
-import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-weight-bar',
-  standalone: true,
-  imports: [CommonModule],
   templateUrl: './weight-bar.component.html',
-  styleUrl: './weight-bar.component.scss'
+  styleUrls: ['./weight-bar.component.scss'],
 })
 export class WeightBarComponent {
-
+  pointerPosition: number = 40;
+  bmi: number = 23.5;
 }

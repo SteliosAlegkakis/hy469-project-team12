@@ -6,12 +6,10 @@ describe('WeightBarComponent', () => {
   let component: WeightBarComponent;
   let fixture: ComponentFixture<WeightBarComponent>;
 
-  beforeEach(async () => {
-    await TestBed.configureTestingModule({
-      imports: [WeightBarComponent]
-    })
-    .compileComponents();
-    
+  beforeEach(() => {
+    TestBed.configureTestingModule({
+      declarations: [WeightBarComponent]
+    });
     fixture = TestBed.createComponent(WeightBarComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
