@@ -1,3 +1,25 @@
 <div class="mobile-body">
     <h1>Sleep</h1>
+    <div class="info-box">
+        <h1 class="info-box-item">6<span>&nbsp;h</span>&nbsp;32<span>&nbsp;min</span></h1>
+        <app-percentage-bar class="info-box-item" style="margin-top: 0;"
+            [completed]="6.5" [goal]="8" 
+            bar_color="#AEE8FF">
+        </app-percentage-bar>
+        <app-info-icons class="info-box-item"
+            label_1="light"
+            label_2="REM"
+            label_3="deep"
+            value_1="3 h 20 min"
+            value_2="1 h 22 min"
+            value_3="2 h 19 min"
+        ></app-info-icons>
+        <app-secondary-info class="info-box-item"
+            label_1 = "bed time :"
+            value_1 = "23:30 - 8:15"
+            label_2 = "sleep quality :"
+            value_2 = "84 %"
+        ></app-secondary-info>
+    </div>
+    <app-graph color="#AEE8FF" [info]="info"></app-graph>
 </div>
