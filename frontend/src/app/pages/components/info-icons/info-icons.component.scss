@@ -1,0 +1,25 @@
+.info-icons-container{
+    margin: 0;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+
+    .info-icon-element{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        
+        img{
+            margin: 1%;
+        }
+
+        .label{
+            color: #ABABAB;
+        }
+    }
+
+    p{
+        margin: 0;
+    }
+}

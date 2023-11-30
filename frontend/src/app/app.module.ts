@@ -18,6 +18,7 @@ import { MobileComponent } from './pages/mobile/mobile.component';
 import { GraphComponent } from './pages/components/graph/graph.component';
 import { PercentageBarComponent } from './pages/components/percentage-bar/percentage-bar.component';
 import { SecondaryInfoComponent } from './pages/components/secondary-info/secondary-info.component';
+import { InfoIconsComponent } from './pages/components/info-icons/info-icons.component';
 
 const socketIoConfig: SocketIoConfig = { url: environment.host, options: {} };
 @NgModule({
@@ -35,7 +36,8 @@ const socketIoConfig: SocketIoConfig = { url: environment.host, options: {} };
     MobileComponent,
     GraphComponent,
     PercentageBarComponent,
-    SecondaryInfoComponent
+    SecondaryInfoComponent,
+    InfoIconsComponent
   ],
   imports: [
     SocketIoModule.forRoot(socketIoConfig),
