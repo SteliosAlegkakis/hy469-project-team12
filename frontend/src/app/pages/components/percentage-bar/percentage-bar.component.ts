@@ -16,6 +16,11 @@ export class PercentageBarComponent implements OnInit{
     this.percentage = (this.completed/this.goal)*100;
     this.percentage = Number(this.percentage.toFixed(0));
 
+    setInterval(() => {
+      this.percentage = (this.completed/this.goal)*100;
+      this.percentage = Number(this.percentage.toFixed(0));
+    }, 3000)
   }
+
 
 }

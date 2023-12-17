@@ -1,9 +1,9 @@
 <div class="mobile-body">
     <h1>Nutrition</h1>
     <div class="info-box">
-        <h1 class="info-box-item">3.241<span>&nbsp;steps</span></h1>
+        <h1 class="info-box-item">{{steps}}<span>&nbsp;steps</span></h1>
         <app-percentage-bar class="info-box-item" style="margin-top: 0;"
-            [completed]="3241" [goal]="6000" 
+            [completed]="steps" [goal]="6000" 
             bar_color="#A2CD81">
         </app-percentage-bar>
         <app-info-icons class="info-box-item"

@@ -21,6 +21,8 @@ import { SecondaryInfoComponent } from './pages/components/secondary-info/second
 import { InfoIconsComponent } from './pages/components/info-icons/info-icons.component';
 import { WeightBarComponent } from './pages/components/weight-bar/weight-bar.component';
 import { WeightInfoComponent } from './pages/components/weight-info/weight-info.component';
+import { DemoSocketsComponent } from './pages/demo-sockets/demo-sockets.component';
+import { BathroomComponent } from './pages/bathroom/bathroom.component';
 
 const socketIoConfig: SocketIoConfig = { url: environment.host, options: {} };
 @NgModule({
@@ -41,7 +43,9 @@ const socketIoConfig: SocketIoConfig = { url: environment.host, options: {} };
     SecondaryInfoComponent,
     InfoIconsComponent,
     WeightBarComponent,
-    WeightInfoComponent
+    WeightInfoComponent,
+    DemoSocketsComponent,
+    BathroomComponent
   ],
   imports: [
     SocketIoModule.forRoot(socketIoConfig),
