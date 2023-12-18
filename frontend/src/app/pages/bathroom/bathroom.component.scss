@@ -1,0 +1,69 @@
+.bathroom-page{
+    margin: 2%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+    h1{
+        font-size: medium;
+        font-weight: bold;
+        text-align: left;
+        width: 100%;
+    }
+
+    h2{
+        font-size: xx-large;
+        span{
+            font-size: medium;
+        }
+    }
+
+    h3{
+        font-size: medium;
+        color: #ABABAB;
+    }
+
+    .sleep-report{
+        margin-right: 2%;
+        padding: 0.7%;
+        background-color: #363636;
+        width: 65%;
+        height: 92vh;
+        border-radius: 10px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        .sleep-time{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-between;
+            margin-top: 3%;
+            margin-bottom: 3%;
+            width: 100%;
+        }
+    }
+
+    .suggestions-quality{
+        display: flex;
+        flex-direction: column;
+        width: 40%;
+        height: 92vh;
+
+        .box{
+            background-color: #363636;
+            height: 100%;
+            width: 100%;
+            border-radius: 10px;
+            padding: 2%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .quality{
+            margin-bottom: 6%;
+        }
+    }
+}

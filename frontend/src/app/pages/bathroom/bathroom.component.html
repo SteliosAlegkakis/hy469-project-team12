@@ -1,1 +1,25 @@
-<p>bathroom works!</p>
+<div class="bathroom-page">
+    <div class="sleep-report">
+        <h1>Sleep Report</h1>
+        <div class="sleep-time">
+            <h2>6<span> hours</span> 38<span> minutes</span></h2>
+            <h3>1:30 am - 8:15 am</h3>
+            <app-percentage-bar style="margin-top: 2%;width: 80%;"
+            [completed]="6.5" [goal]="8" 
+            bar_color="#AEE8FF"></app-percentage-bar>
+        </div>
+    </div>
+    <div class="suggestions-quality">
+        <div class="box quality">
+            <h1>Sleep Quality</h1>
+        </div>
+        <div class="box">
+            <h1>Sleep Suggestions</h1>
+            <app-sleep-suggestion
+            img="screen-time" title="Reduce screen time"
+            text="You had 2 hours of screen time right before bed. This can affect your sleep in a bad way."
+            [index]="1"
+            ></app-sleep-suggestion>
+        </div>
+    </div>
+</div>

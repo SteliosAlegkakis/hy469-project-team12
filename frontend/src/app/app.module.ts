@@ -23,6 +23,7 @@ import { WeightBarComponent } from './pages/components/weight-bar/weight-bar.com
 import { WeightInfoComponent } from './pages/components/weight-info/weight-info.component';
 import { DemoSocketsComponent } from './pages/demo-sockets/demo-sockets.component';
 import { BathroomComponent } from './pages/bathroom/bathroom.component';
+import { SleepSuggestionComponent } from './pages/components/sleep-suggestion/sleep-suggestion.component';
 
 const socketIoConfig: SocketIoConfig = { url: environment.host, options: {} };
 @NgModule({
@@ -45,7 +46,8 @@ const socketIoConfig: SocketIoConfig = { url: environment.host, options: {} };
     WeightBarComponent,
     WeightInfoComponent,
     DemoSocketsComponent,
-    BathroomComponent
+    BathroomComponent,
+    SleepSuggestionComponent
   ],
   imports: [
     SocketIoModule.forRoot(socketIoConfig),
