@@ -24,6 +24,7 @@ import { WeightInfoComponent } from './pages/components/weight-info/weight-info.
 import { DemoSocketsComponent } from './pages/demo-sockets/demo-sockets.component';
 import { BathroomComponent } from './pages/bathroom/bathroom.component';
 import { SleepSuggestionComponent } from './pages/components/sleep-suggestion/sleep-suggestion.component';
+import { SleepCategoryComponent } from './pages/components/sleep-category/sleep-category.component';
 
 const socketIoConfig: SocketIoConfig = { url: environment.host, options: {} };
 @NgModule({
@@ -47,7 +48,8 @@ const socketIoConfig: SocketIoConfig = { url: environment.host, options: {} };
     WeightInfoComponent,
     DemoSocketsComponent,
     BathroomComponent,
-    SleepSuggestionComponent
+    SleepSuggestionComponent,
+    SleepCategoryComponent
   ],
   imports: [
     SocketIoModule.forRoot(socketIoConfig),

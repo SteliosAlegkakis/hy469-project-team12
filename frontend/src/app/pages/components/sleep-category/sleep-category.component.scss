@@ -1,0 +1,27 @@
+.container{
+    width: 15vw;
+    height: 95%;
+    background-color: #515151;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: #F2EEE9;
+    border-radius: 10px;
+    padding: 5%;
+
+    .title{
+        font-size: small;
+        font-weight: 700;
+    }
+
+    .hours{
+        font-size: medium;
+        font-weight: 700;
+    }
+
+    .ideal,.description{
+        font-size: small;
+        font-weight: 500;
+        color: #CCCCCC;
+    }
+}
