@@ -1,10 +1,10 @@
 <div>
-    <div class="arrow left"><img src="../../../../assets/arrows/left.png" alt="left arrow"></div>
+    <div class="arrow left" (click)="showPreviousSuggestion()"><img src="../../../../assets/arrows/left.png" alt="left arrow"></div>
     <div class="content">
         <img [src]="'../../../../assets/sleep-suggestions/'+img+'.png'" alt="">
         <h3>{{title}}</h3>
         <p>{{text}}</p>
         <p>{{index}}/5</p>
     </div>
-    <div class="arrow right"><img src="../../../../assets/arrows/right.png" alt="right arrow"></div>
+    <div class="arrow right" (click)="showNextSuggestion()"><img src="../../../../assets/arrows/right.png" alt="right arrow"></div>
 </div>
