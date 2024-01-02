@@ -71,6 +71,19 @@
 
         .quality{
             margin-bottom: 6%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+
+            h2{
+                margin: 5%;
+            }
+
+            p{
+                font-weight: 500;
+                color: #ABABAB;
+                margin: 2%;
+            }
         }
     }
 }
