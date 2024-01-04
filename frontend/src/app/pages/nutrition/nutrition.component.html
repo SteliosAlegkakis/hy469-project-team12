@@ -1,4 +1,19 @@
 <div class="mobile-body">
     <h1>Nutrition</h1>
-    <app-graph color="#A2CD81" [info]="info"></app-graph>
+    <div class="info-box">
+        <h1 class="info-box-item">1300<span>&nbsp;kcal</span></h1>
+        <app-percentage-bar class="info-box-item" style="margin-top: 0;"
+            [completed]="1300" [goal]="2100" 
+            bar_color="#FED483">
+        </app-percentage-bar>
+        <app-info-icons class="info-box-item icons"
+            label_1="protein"
+            label_2="carbohydrates"
+            label_3="fat"
+            value_1="90 grams"
+            value_2="130 grams"
+            value_3="40 grams"
+        ></app-info-icons>
+    </div>
+    <app-graph color="#FED483" [info]="info"></app-graph>
 </div>
