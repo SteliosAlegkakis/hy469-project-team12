@@ -25,6 +25,7 @@ import { DemoSocketsComponent } from './pages/demo-sockets/demo-sockets.componen
 import { BathroomComponent } from './pages/bathroom/bathroom.component';
 import { SleepSuggestionComponent } from './pages/components/sleep-suggestion/sleep-suggestion.component';
 import { SleepCategoryComponent } from './pages/components/sleep-category/sleep-category.component';
+import { MealComponent } from './pages/components/meal/meal.component';
 
 const socketIoConfig: SocketIoConfig = { url: environment.host, options: {} };
 @NgModule({
@@ -49,7 +50,8 @@ const socketIoConfig: SocketIoConfig = { url: environment.host, options: {} };
     DemoSocketsComponent,
     BathroomComponent,
     SleepSuggestionComponent,
-    SleepCategoryComponent
+    SleepCategoryComponent,
+    MealComponent
   ],
   imports: [
     SocketIoModule.forRoot(socketIoConfig),

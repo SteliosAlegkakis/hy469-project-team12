@@ -21,4 +21,12 @@ export class NutritionComponent {
     {height: 70, date: 29, month: 11},
     {height: 100, date: 30, month: 11},
   ]
+  
+  meals: {calories: Number, type: string, ingredients: string, completed: boolean}[] = [
+    {calories: 400, type: "Breakfast", ingredients: "eggs, avocado, bread", completed: true},
+    {calories: 500, type: "Lunch", ingredients: "chicken fillet, white rice", completed: false},
+    {calories: 300, type: "Afternoon snack", ingredients: "protein bar, banana", completed: false},
+    {calories: 600, type: "Dinner", ingredients: "spaghetti, ground beef", completed: false},
+    {calories: 300, type: "Night sanck", ingredients: "yoghurt, honey, strawberries", completed: false}
+  ]
 }

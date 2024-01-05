@@ -14,6 +14,9 @@
             value_2="130 grams"
             value_3="40 grams"
         ></app-info-icons>
+        <div class="meals" *ngFor="let meal of meals">
+            <app-meal [calories]=meal.calories [type]=meal.type [ingredients]=meal.ingredients [completed]=meal.completed></app-meal>
+        </div>
     </div>
     <app-graph color="#FED483" [info]="info"></app-graph>
 </div>
