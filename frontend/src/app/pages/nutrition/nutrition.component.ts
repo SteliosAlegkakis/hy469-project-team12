@@ -20,13 +20,31 @@ export class NutritionComponent {
     {height: 60, date: 28, month: 11},
     {height: 70, date: 29, month: 11},
     {height: 100, date: 30, month: 11},
-  ]
+  ];
   
-  meals: {calories: Number, type: string, ingredients: string, completed: boolean}[] = [
-    {calories: 400, type: "Breakfast", ingredients: "eggs, avocado, bread", completed: true},
-    {calories: 500, type: "Lunch", ingredients: "chicken fillet, white rice", completed: false},
-    {calories: 300, type: "Afternoon snack", ingredients: "protein bar, banana", completed: false},
-    {calories: 600, type: "Dinner", ingredients: "spaghetti, ground beef", completed: false},
-    {calories: 300, type: "Night sanck", ingredients: "yoghurt, honey, strawberries", completed: false}
-  ]
+  meals: {calories: number, protein:number, carbs:number, fat:number, type: string, ingredients: string, completed: boolean}[] = [
+    {calories: 400, protein: 30, carbs: 40, fat: 20, type: "Breakfast", ingredients: "eggs, avocado, bread", completed: false},
+    {calories: 500, protein: 45, carbs: 50, fat: 15, type: "Lunch", ingredients: "chicken fillet, white rice", completed: false},
+    {calories: 300, protein: 20, carbs: 20, fat: 5, type: "Afternoon snack", ingredients: "protein bar, banana", completed: false},
+    {calories: 600, protein:40, carbs: 60, fat: 20, type: "Dinner", ingredients: "spaghetti, ground beef", completed: false},
+    {calories: 300, protein:20, carbs: 30, fat: 6,  type: "Night sanck", ingredients: "yoghurt, honey, strawberries", completed: false}
+  ];
+
+  calories:number = 0;
+  protein:number = 0;
+  carbs:number = 0;
+  fat:number = 0;
+
+  added_meal:string = "";
+  addMeal(type:string){
+    for (let meal of this.meals){
+      if(meal.type === type) {
+        meal.completed = true;
+        this.calories += meal.calories;
+        this.protein += meal.protein;
+        this.carbs += meal.carbs;
+        this.fat += meal.fat;
+      }
+    }
+  }
 }
