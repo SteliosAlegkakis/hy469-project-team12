@@ -1,0 +1,14 @@
+<div class="kitchen-body" style="margin-top: 0%;margin-bottom: 0%;">
+    <div class="info-box">
+        <h1 class="info-box-item">{{calories}}<span>&nbsp;kcal</span></h1>
+        <app-percentage-bar  [completed]="calories" [goal]="2100" bar_color="#FED483"></app-percentage-bar>
+        <app-info-icons class="info-box-item icons"
+            label_1="protein"
+            label_2="carbohydrates"
+            label_3="fat"
+            [value_1]='protein+" grams"'
+            [value_2]='carbs+" grams"'
+            [value_3]='fat+" grams"'
+        ></app-info-icons>
+    </div>
+</div>

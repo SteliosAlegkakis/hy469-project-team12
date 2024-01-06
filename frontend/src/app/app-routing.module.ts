@@ -8,6 +8,7 @@ import { WeightComponent } from './pages/weight/weight.component';
 import { SleepComponent } from './pages/sleep/sleep.component';
 import { DemoSocketsComponent } from './pages/demo-sockets/demo-sockets.component';
 import { BathroomComponent } from './pages/bathroom/bathroom.component';
+import { KitchenComponent } from './pages/kitchen/kitchen.component';
 
 const routes: Routes = [
   // { path: 'socket-events', loadChildren: () => import('./pages/socket-events/socket-events.module').then(m => m.SocketEventsModule) },
@@ -21,6 +22,7 @@ const routes: Routes = [
   { path: 'weight' , component: WeightComponent},
   { path: 'sleep' , component: SleepComponent},
   { path: 'bathroom' , component: BathroomComponent },
+  { path: 'kitchen' , component: KitchenComponent},
   { path: '**', redirectTo: 'home', pathMatch: 'full' },
 ];
 
