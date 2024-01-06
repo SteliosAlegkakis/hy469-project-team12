@@ -10,5 +10,9 @@
             [value_2]='carbs+" grams"'
             [value_3]='fat+" grams"'
         ></app-info-icons>
+        <div class="meals">
+            <app-meal *ngFor="let meal of meals" [calories]=meal.calories [type]=meal.type [ingredients]=meal.ingredients [completed]=meal.completed></app-meal>
+            <div class="add-meal"><p>+ Add meal</p></div>
+        </div>
     </div>
 </div>

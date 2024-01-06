@@ -1,6 +1,20 @@
 .icons{
     padding-bottom: 5%;
     border-bottom: 1px solid #ABABAB;
-    padding-left: 10%;
-    padding-right: 10%;
+}
+
+.meals{
+    margin-top: 2%;
+
+    .add-meal{
+        border-radius: 10px;
+        background-color: #282828;
+        padding: 2%;
+        width: 35%;
+
+        p{
+            margin: 0;
+            padding: 3%;
+        }
+    }
 }
