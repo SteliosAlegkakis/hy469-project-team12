@@ -1,11 +1,22 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { SocketsService } from 'src/app/global/services/sockets/sockets.service';
 
 @Component({
   selector: 'app-kitchen',
   templateUrl: './kitchen.component.html',
   styleUrls: ['./kitchen.component.scss']
 })
-export class KitchenComponent {
+export class KitchenComponent implements OnInit{
+  constructor(private sockets: SocketsService) {}
+  ngOnInit(): void {
+    this.sockets.subscribe("updated_meals_mobile",(payload:any)=> {
+      this.meals = payload.meals;
+      this.calories = payload.calories;
+      this.protein = payload.protein;
+      this.carbs = payload.carbs;
+      this.fat = payload.fat;
+    });
+  }
   calories:number = 0;
   protein:number = 0;
   carbs:number = 0;
@@ -18,4 +29,17 @@ export class KitchenComponent {
     {calories: 600, protein:40, carbs: 60, fat: 20, type: "Dinner", ingredients: "spaghetti, ground beef", completed: false},
     {calories: 300, protein:20, carbs: 30, fat: 6,  type: "Night sanck", ingredients: "yoghurt, honey, strawberries", completed: false}
   ];
+
+  addMeal(type:string){
+    for (let meal of this.meals){
+      if(meal.type === type) {
+        meal.completed = true;
+        this.calories += meal.calories;
+        this.protein += meal.protein;
+        this.carbs += meal.carbs;
+        this.fat += meal.fat;
+      }
+    }
+    this.sockets.publish("updated_meals_kitchen", {meals: this.meals,calories: this.calories,protein: this.protein,carbs: this.carbs,fat: this.fat});
+  }
 }

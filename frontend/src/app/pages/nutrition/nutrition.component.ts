@@ -1,11 +1,23 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { SocketsService } from 'src/app/global/services/sockets/sockets.service';
 
 @Component({
   selector: 'app-nutrition',
   templateUrl: './nutrition.component.html',
   styleUrls: ['./nutrition.component.scss']
 })
-export class NutritionComponent {
+export class NutritionComponent implements OnInit{
+  constructor(private sockets: SocketsService) {}
+  ngOnInit(): void {
+    this.sockets.subscribe("updated_meals_kitchen",(payload:any)=> {
+      this.meals = payload.meals;
+      this.calories = payload.calories;
+      this.protein = payload.protein;
+      this.carbs = payload.carbs;
+      this.fat = payload.fat;
+    });
+  }
+
   info: {height: Number, date: Number, month: Number}[] = [
     {height: 70, date: 18, month: 11},
     {height: 60, date: 19, month: 11},
@@ -46,5 +58,6 @@ export class NutritionComponent {
         this.fat += meal.fat;
       }
     }
+    this.sockets.publish("updated_meals_mobile", {meals: this.meals,calories: this.calories,protein: this.protein,carbs: this.carbs,fat: this.fat});
   }
 }
