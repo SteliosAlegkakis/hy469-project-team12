@@ -1,5 +1,16 @@
 <div class="mobile-body">
   <h1>Weight</h1>
-  <app-weight-bar></app-weight-bar>
-  <app-weight-info></app-weight-info>
+  <div class="info-box">
+    <app-weight-info></app-weight-info>
+    <app-info-icons class="info-box-item"
+            label_1="bodyfat"
+            label_2="muscle"
+            label_3="bones"
+            value_1="15 %"
+            value_2="40 %"
+            value_3="45 %"
+        ></app-info-icons>
+    <app-weight-bar></app-weight-bar>
+  </div>
+  <app-graph color="#C4A7F2" [info]="info"></app-graph>
 </div>
