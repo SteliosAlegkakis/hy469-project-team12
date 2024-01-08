@@ -1,64 +1,35 @@
 .box {
-  padding: 0 36px;
-  margin: 0;
-  position: relative;
+  margin-top: 3%;
 
-  // background-color: #151515;
 
   .line-with-texts {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    margin: 0;
   }
   .text-left {
-    width: 28px;
-    height: 14px;
-    flex-shrink: 0;
     color: #ababab;
-
-    font-family: Inter;
-    font-size: 14px;
-    font-style: normal;
+    font-size: medium;
     font-weight: 600;
-    line-height: normal;
   }
   .text-right {
-    width: 103px;
-    height: 17px;
-    flex-shrink: 0;
-    color: #f2eee9;
-
-    font-family: Inter;
-    font-size: 16px;
-    font-style: normal;
+    font-size: medium;
     font-weight: 600;
-    line-height: normal;
   }
   .text-right2 {
-    color: #f2eee9;
-    font-family: Inter;
-    font-size: 14px;
-    font-style: normal;
+    font-size: small;
     font-weight: 500;
-    line-height: normal;
   }
   .text-left2 {
-    width: 164px;
-    height: 17px;
-    flex-shrink: 0;
     color: #ababab;
-
-    font-family: Inter;
-    font-size: 12px;
-    font-style: normal;
+    font-size: small;
     font-weight: 500;
-    line-height: normal;
   }
   .progress-bar {
-    width: 300px; /* Adjust the width of the progress bar */
-    height: 11px; /* Height of the progress bar */
+    width: 100%;
+    height: 2vh; 
     margin-top: 20px;
-    flex-shrink: 0;
     position: relative;
     border-radius: 10px;
     background: linear-gradient(
@@ -66,20 +37,16 @@
       rgba(255, 255, 255, 0) -120.43%,
       #ac7afb 100%
     );
-    margin-bottom: 20px; /* Add space below the progress bar */
+    margin-top: 3%;
+    margin-bottom: 3%;
   }
 
   .pointer {
-    width: 9px;
-    height: 28px;
-    flex-shrink: 0;
+    width: 3%;
+    height: 4vh;
     border-radius: 10px;
     background: #f2eee9;
     position: absolute;
     top: -50%;
-
-    transform: translateX(-50%);
   }
-
-  /* Optional styles */
 }
