@@ -1,9 +1,12 @@
 <div class="mobile-body">
     <h1>Nutrition</h1>
     <div class="info-box">
+        <div *ngIf="goal_completed && show_notification" class="notification">
+            <p>🎉 Congratulations! You have completed your daily steps goal. Keep up the good work.</p>
+        </div>
         <h1 class="info-box-item">{{steps}}<span>&nbsp;steps</span></h1>
         <app-percentage-bar class="info-box-item" style="margin-top: 0;"
-            [completed]="steps" [goal]="6000" 
+            [completed]="steps" [goal]="goal" 
             bar_color="#A2CD81">
         </app-percentage-bar>
         <app-info-icons class="info-box-item"

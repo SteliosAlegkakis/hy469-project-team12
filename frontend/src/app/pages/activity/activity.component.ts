@@ -8,18 +8,25 @@ import { SocketsService } from 'src/app/global/services/sockets/sockets.service'
 })
 export class ActivityComponent implements OnInit{
   constructor(private sockets: SocketsService) {}
-  steps: number = 3241;
+  
   ngOnInit(): void {
-      
     this.sockets.subscribe("add_steps",(payload:any)=> {
       console.log(payload);
       console.log(111);
   
       this.steps += payload.num;
+      if(this.steps >= this.goal) {
+        this.goal_completed = true;
+        setTimeout(()=>{this.show_notification = false},4500);
+      }
       console.log(this.steps);
     });
-    
   }
+
+  goal_completed:boolean = false;
+  show_notification:boolean = true;
+  goal:number = 6000;
+  steps: number = 3241;
 
   info: {height: Number, date: Number, month: Number}[] = [
     {height: 70, date: 18, month: 11},
