@@ -9,7 +9,12 @@ import { SocketsService } from 'src/app/global/services/sockets/sockets.service'
 export class DemoSocketsComponent {
 
   constructor(private sockets: SocketsService) {}
+
   add_steps() {
-    this.sockets.publish("add_steps", {num: 3000})
+    this.sockets.publish("add_steps", {num: 3000});
+  }
+
+  update_weight() {
+    this.sockets.publish("update_weight", {weight_lost: 0.5});
   }
 }
