@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, ElementRef, HostListener, Input, ViewChild } from '@angular/core';
 
 @Component({
   selector: 'app-sleep-suggestion',
@@ -54,5 +54,36 @@ export class SleepSuggestionComponent {
     this.img = this.icons[index];
     this.title = this.titles[index];
     this.text = this.texts[index];
+  }
+
+  
+  public GesturesStr: string[] = [
+    "SWIPE_LEFT",
+    "SWIPE_UP",
+    "SWIPE_DOWN",
+    "SWIPE_RIGHT",
+    "CIRCLE_CLOCKWISE",
+    "CIRCLE_COUNTERCLOCKWISE",
+    "PINCH",
+  ];
+
+  ngOnInit() {
+    (window as any)["electronAPI"].onGesture(
+      (arg: any) => {
+        console.log("Gesture recognised: ", this.GesturesStr[arg])
+        if(this.GesturesStr[arg] == "SWIPE_RIGHT") this.showNextSuggestion();
+        if(this.GesturesStr[arg] == "SWIPE_LEFT") this.showPreviousSuggestion();
+      }
+    );
+  }
+
+  @ViewChild('appReplaceCursor', { static: true }) cursorReplacement: ElementRef = {} as ElementRef;
+
+  @HostListener('mousemove', ['$event'])
+  onmousemove(event: MouseEvent) {
+    if (this.cursorReplacement.nativeElement) {
+      this.cursorReplacement.nativeElement.style.left = event.pageX + 'px';
+      this.cursorReplacement.nativeElement.style.top = event.pageY + 'px';
+    }
   }
 }
