@@ -100,28 +100,17 @@ export class KitchenComponent implements OnInit {
   ];
 
   addMeal(type: string) {
-    if (this.clicked == false) {
-      this.clicked = true;
-      for (let meal of this.meals) {
-        if (meal.type === type) {
+    for (let meal of this.meals) {
+      if (meal.type === type) {
+        if (meal.completed == false) {
           meal.completed = true;
+
           this.calories += meal.calories;
+
           this.protein += meal.protein;
           this.carbs += meal.carbs;
           this.fat += meal.fat;
-        }
-      }
-      this.sockets.publish('updated_meals_kitchen', {
-        meals: this.meals,
-        calories: this.calories,
-        protein: this.protein,
-        carbs: this.carbs,
-        fat: this.fat,
-      });
-    } else {
-      this.clicked = false;
-      for (let meal of this.meals) {
-        if (meal.type === type) {
+        } else {
           meal.completed = false;
           this.calories -= meal.calories;
           this.protein -= meal.protein;
@@ -129,13 +118,13 @@ export class KitchenComponent implements OnInit {
           this.fat -= meal.fat;
         }
       }
-      this.sockets.publish('updated_meals_kitchen', {
-        meals: this.meals,
-        calories: this.calories,
-        protein: this.protein,
-        carbs: this.carbs,
-        fat: this.fat,
-      });
     }
+    this.sockets.publish('updated_meals_kitchen', {
+      meals: this.meals,
+      calories: this.calories,
+      protein: this.protein,
+      carbs: this.carbs,
+      fat: this.fat,
+    });
   }
 }
