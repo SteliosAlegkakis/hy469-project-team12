@@ -17,24 +17,16 @@ export class BathroomComponent implements OnInit {
     this.smart_speaker.start();
     this.smart_speaker.addCommand('HELLO SMART', () => {
       this.smart_speaker.speak(
-        'Good morning Nick , your sleep quality was 82 percent good. Do you agree?'
+        'Good morning John , how was your sleep last night ?'
       );
-      console.log(
-        'Good morning Nick , your sleep quality was 82 percent good. Do you agree?'
-      );
-      this.smart_speaker.addCommand('YES', () => {
-        this.smart_speaker.speak('THANK YOU FOR YOUR FEEDBACK');
-        console.log('thanks for feedback');
+      this.smart_speaker.addCommand(['Good','It was good'], () => {
+        this.smart_speaker.speak('That is good to hear, take a look at your sleep report and suggestions to improve your sleep further.');
       });
-      this.smart_speaker.addCommand('NO', () => {
+      this.smart_speaker.addCommand(['Bad','It was bad','It was not good'], () => {
         this.smart_speaker.speak(
-          'THANK YOU FOR YOUR FEEDBACK , WE WILL COUNT IT OUT'
+          'I am sorry to hear that, take a look at your sleep suggestions to help you improve your sleep.'
         );
-        console.log('thanks for feedback , we will count it out');
       });
-      this.smart_speaker.stop(); //it doesnt stop
     });
-
-    // throw new Error('Method not implemented.');
   }
 }
