@@ -27,6 +27,7 @@ import { SleepSuggestionComponent } from './pages/components/sleep-suggestion/sl
 import { SleepCategoryComponent } from './pages/components/sleep-category/sleep-category.component';
 import { MealComponent } from './pages/components/meal/meal.component';
 import { KitchenComponent } from './pages/kitchen/kitchen.component';
+import { FormsModule } from '@angular/forms';
 
 const socketIoConfig: SocketIoConfig = { url: environment.host, options: {} };
 @NgModule({
@@ -59,7 +60,8 @@ const socketIoConfig: SocketIoConfig = { url: environment.host, options: {} };
     SocketIoModule.forRoot(socketIoConfig),
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

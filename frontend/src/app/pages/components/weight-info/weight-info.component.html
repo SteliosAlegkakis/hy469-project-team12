@@ -1,3 +1,26 @@
+<div *ngIf="show_pop_up" class="goal-pop-up">
+  <div class="title">
+    <h1>Set a bodyweight goal</h1>
+    <img src="../../../../assets/arrows/down.png" (click)="hidePopUp()">
+  </div>
+  <div class="weeks-container">
+    <label for="weeks">time period</label>
+    <select [(ngModel)]="weeks" (ngModelChange)="updateWeeks()" id="weeks" name="weeks">
+      <option value="4">4 weeks</option>
+      <option value="8">8 weeks</option>
+      <option value="12">12 weeks</option>
+      <option value="16">16 weeks</option>
+    </select>
+  </div>
+  <div class="weight-goal-container">
+    <input type="number" id="goal" name="goal" [(ngModel)]="new_goal" (ngModelChange)="updateWeightGoal()" step="0.5">
+    <label for="">kg</label>
+  </div>
+  <p class="kg-per-week">You will have to lose {{kg_per_week}} kg per week</p>
+  <div class="button-container">
+    <button (click)="setGoal()" class="set">Set goal</button>
+  </div>
+</div>
 <div class="box">
   <div class="big-text">{{ weight }}kg</div>
 
@@ -6,7 +29,7 @@
     <span class="icon-text">{{ lost }}</span>
   </div>
 
-  <div class="goal">
+  <div class="goal" (click)="showPopUp()">
     <div class="rounded-text">goal : {{ goal }} kg</div>
   </div>
 </div>
