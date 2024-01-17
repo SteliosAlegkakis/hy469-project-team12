@@ -1,12 +1,12 @@
 <div *ngIf="show_pop_up" class="pop-up">
   <h4>Breakfast</h4>
   <app-meal
-    *ngFor="let meal of specific_meals"
-    [calories]="meal.calories"
-    [type]="meal.name"
-    [ingredients]="meal.info"
+    [calories]="replace_meal.calories"
+    [type]="replace_meal.name"
+    [ingredients]="replace_meal.info"
     [completed]="false"
   ></app-meal>
+  <button (click)="replaceMeal('Breakfast')">Save meal</button>
 </div>
 
 <div class="kitchen-body" style="margin-top: 0%; margin-bottom: 0%">

@@ -22,26 +22,23 @@ export class KitchenComponent implements OnInit {
     });
     this.smart_speaker.initialize();
     this.smart_speaker.start();
-    this.smart_speaker.speak('Welcome to kitchen');
 
-    this.smart_speaker.addCommand('Change', () => {
-      this.smart_speaker.speak('Which meal?');
+    this.smart_speaker.addCommand('Replace a meal', () => {
+      this.smart_speaker.speak('Which meal would you like to replace?');
       this.smart_speaker.addCommand('Breakfast', () => {
+       this.smart_speaker.speak("What would you like to replace your breakfast with?");
+       this.smart_speaker.addCommand("yogurt",()=>{
         this.showPopUp();
-        this.smart_speaker.addCommand('yogurt', () => {
-          this.smart_speaker.speak('You will add 200 calories are you sure?');
-          this.smart_speaker.addCommand('yes', () => {
-            const breakfastIndex = this.meals.findIndex(
-              (meal) => meal.type === 'Breakfast'
-            );
-            this.meals[breakfastIndex].ingredients += ', yogurt';
-            this.meals[breakfastIndex].calories += 200;
-            this.hidePopUp();
-          });
+        this.smart_speaker.speak('This meal has 200 calories less than suggested, do you want to continue and replace it?');
+        this.smart_speaker.addCommand('yes', () => {
+          this.replaceMeal("Breakfast");
+          this.smart_speaker.speak("Your breakfast has been replaced with yogurt.");
         });
+       })
       });
     });
   }
+
   show_pop_up: boolean = false;
   calories: number = 0;
   protein: number = 0;
@@ -82,6 +79,8 @@ export class KitchenComponent implements OnInit {
       info: 'Protein:22  Carbs:30  fat:20',
     },
   ];
+
+  replace_meal:any = this.specific_meals[0];
 
   meals: {
     calories: number;
@@ -172,5 +171,14 @@ export class KitchenComponent implements OnInit {
   }
   hidePopUp() {
     this.show_pop_up = false;
+  }
+
+  replaceMeal(meal_type:string){
+    const Index = this.meals.findIndex(
+        (meal) => meal.type === meal_type
+    );
+    this.meals[Index].ingredients = 'yogurt';
+    this.meals[Index].calories = 200;
+    this.hidePopUp();
   }
 }
