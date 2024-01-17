@@ -22,27 +22,67 @@ export class KitchenComponent implements OnInit {
     });
     this.smart_speaker.initialize();
     this.smart_speaker.start();
+    this.smart_speaker.speak('Welcome to kitchen');
 
-    // this.smart_speaker.speak('hello world');
-    // this.smart_speaker.speak('hello', () => {
-    //   console.log('hello2');
-    // });
-
-    // this.smart_speaker.addCommand('hello', () => {
-    //   console.log('hello');
-    // });
-    this.smart_speaker.speak('i am fine, thanks', () => {
-      console.log('speech ended');
-    });
-    this.smart_speaker.addCommand('how are you', () => {
-      this.smart_speaker.speak('i am fine, thanks');
+    this.smart_speaker.addCommand('Change', () => {
+      this.smart_speaker.speak('Which meal?');
+      this.smart_speaker.addCommand('Breakfast', () => {
+        this.showPopUp();
+        this.smart_speaker.addCommand('yogurt', () => {
+          this.smart_speaker.speak('You will add 200 calories are you sure?');
+          this.smart_speaker.addCommand('yes', () => {
+            const breakfastIndex = this.meals.findIndex(
+              (meal) => meal.type === 'Breakfast'
+            );
+            this.meals[breakfastIndex].ingredients += ', yogurt';
+            this.meals[breakfastIndex].calories += 200;
+            this.hidePopUp();
+          });
+        });
+      });
     });
   }
+  show_pop_up: boolean = false;
   calories: number = 0;
   protein: number = 0;
   carbs: number = 0;
   fat: number = 0;
   clicked: boolean = false;
+
+  specific_meals: {
+    name: string;
+    calories: number;
+    protein: number;
+    carbs: number;
+    fat: number;
+    info: string;
+  }[] = [
+    {
+      name: 'yogurt',
+      calories: 200,
+      protein: 18,
+      carbs: 15,
+      fat: 2,
+      info: 'Protein:18  Carbs:15  Fat:2',
+    },
+    {
+      name: 'protein shake',
+      calories: 400,
+      protein: 36,
+      carbs: 30,
+      fat: 20,
+      info: 'Protein:36  Carbs:30  Fat:20',
+    },
+    {
+      name: 'protein bar',
+      calories: 350,
+      protein: 22,
+      carbs: 30,
+      fat: 20,
+      info: 'Protein:22  Carbs:30  fat:20',
+    },
+  ];
+
   meals: {
     calories: number;
     protein: number;
@@ -126,5 +166,11 @@ export class KitchenComponent implements OnInit {
       carbs: this.carbs,
       fat: this.fat,
     });
+  }
+  showPopUp() {
+    this.show_pop_up = true;
+  }
+  hidePopUp() {
+    this.show_pop_up = false;
   }
 }
