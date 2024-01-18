@@ -11,10 +11,12 @@ export class ActivityComponent implements OnInit{
   
   ngOnInit(): void {
     this.sockets.subscribe("add_steps",(payload:any)=> {
-      console.log(payload);
-      console.log(111);
-  
       this.steps += payload.num;
+      this.duration = 90;
+      this.kcal = 400;
+      this.heart_rate = 80;
+      this.distance = 2.52;
+      this.total_cal = 960;
       if(this.steps >= this.goal) {
         this.goal_completed = true;
         setTimeout(()=>{this.show_notification = false},4500);
@@ -27,6 +29,11 @@ export class ActivityComponent implements OnInit{
   show_notification:boolean = true;
   goal:number = 6000;
   steps: number = 3241;
+  duration:number = 30;
+  kcal:number = 150;
+  heart_rate:number = 67;
+  distance:number = 1.23;
+  total_cal = 560;
 
   info: {height: Number, date: Number, month: Number}[] = [
     {height: 70, date: 18, month: 11},

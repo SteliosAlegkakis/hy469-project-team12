@@ -23,7 +23,7 @@ export class KitchenComponent implements OnInit {
     this.smart_speaker.initialize();
     this.smart_speaker.start();
 
-    this.smart_speaker.addCommand('Replace a meal', () => {
+    this.smart_speaker.addCommand(['Replace a meal','replace meal','meal replace'], () => {
       this.smart_speaker.speak('Which meal would you like to replace?');
       this.smart_speaker.addCommand('Breakfast', () => {
        this.smart_speaker.speak("What would you like to replace your breakfast with?");
